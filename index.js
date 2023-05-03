@@ -38,10 +38,10 @@ function toggleUnitLabel() {
 
     if (unitSwitch.checked) {
         unitLabel.innerHTML = "cm → inch";
-        inputValuesLabel.innerHTML = "Enter Values (L x B x H) in cm:";
+        inputValuesLabel.innerHTML = "Enter values (L x B x H) in cm:";
     } else {
         unitLabel.innerHTML = "inch → cm";
-        inputValuesLabel.innerHTML = "Enter Values (L x B x H) in inches:";
+        inputValuesLabel.innerHTML = "Enter values (L x B x H) in inches:";
     }
 }
 
@@ -85,10 +85,10 @@ function toggleWeightLabel() {
 
     if (unitSwitch.checked) {
         unitLabel.innerHTML = "kg → lbs";
-        inputValuesLabel.innerHTML = "Enter Value in kg:";
+        inputValuesLabel.innerHTML = "Enter value in kg:";
     } else {
         unitLabel.innerHTML = "lbs → kg";
-        inputValuesLabel.innerHTML = "Enter Value in lbs:";
+        inputValuesLabel.innerHTML = "Enter value in lbs:";
     }
 }
 
