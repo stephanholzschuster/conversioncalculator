@@ -2,6 +2,14 @@ function convertLengthValues() {
     let inputValues = document.getElementById("inputValues").value;
     let valuesArray = inputValues.split("x");
     
+    // Überprüfen, ob das Format korrekt ist
+    if (valuesArray.length !== 3 || isNaN(parseFloat(valuesArray[0])) || isNaN(parseFloat(valuesArray[1])) || isNaN(parseFloat(valuesArray[2]))){
+        // Wenn das Format falsch ist, eine Fehlermeldung anzeigen
+        alert("Please enter following format: L x B x H e.g. 10 x 20 x 30", 'danger');
+        document.getElementById("outputValues").value = "";
+        return;
+    } 
+    
     let length = parseFloat(valuesArray[0].trim());
     let width = parseFloat(valuesArray[1].trim());
     let height = parseFloat(valuesArray[2].trim());
@@ -51,7 +59,7 @@ function clearValues() {
 }
 
 document.addEventListener('keyup', function(event) {
-    if (event.key === 'Delete' || event.key ==='Backspace') {
+    if (event.key === 'Delete') {
         clearValues();
     }
 });
@@ -98,7 +106,7 @@ function clearWeightValues() {
 }
 
 document.addEventListener('keyup', function(event) {
-    if (event.key === 'Delete' || event.key ==='Backspace') {
+    if (event.key === 'Delete') {
         clearWeightValues();
     }
 });
@@ -119,7 +127,6 @@ inputWeight.addEventListener("keydown", function(event) {
     inputValues.focus();
   }
 });
-
 
 function initializePage() {
     toggleUnitLabel();
