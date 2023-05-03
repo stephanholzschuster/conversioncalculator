@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/gif" href="images/favicon.ico">
-    <script src="index.js"></script>
 </head>
 
 
@@ -29,7 +28,7 @@
         <div class="form-group">
             <label for="inputValues">Enter Values (L x B x H) in cm:</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="inputValues" placeholder="e.g. 10 x 5 x 3">
+                <input type="text" class="form-control" id="inputValues" tabindex="1" placeholder="e.g. 10 x 5 x 3">
                 <div class="input-group-append">
                     <span class="input-group-text" id="unitText"></span>
                 </div>
@@ -60,7 +59,7 @@
         <div class="form-group">
             <label for="inputWeight">Enter Weight:</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="inputWeight" placeholder="e.g. 50">
+                <input type="text" class="form-control" id="inputWeight" tabindex="2" placeholder="e.g. 50">
                 <div class="input-group-append">
                     <span class="input-group-text" id="weightUnitText"></span>
                 </div>
@@ -78,6 +77,8 @@
         </div>
 
     </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
 

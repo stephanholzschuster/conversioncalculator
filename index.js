@@ -25,6 +25,12 @@ function convertLengthValues() {
     }
 }
 
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        convertLengthValues();
+    }
+});
+
 function toggleUnitLabel() {
     let unitSwitch = document.getElementById("unitSwitch");
     let unitLabel = document.getElementById("unitLabel");
@@ -44,6 +50,11 @@ function clearValues() {
     document.getElementById("outputValues").value = "";
 }
 
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Delete' || event.key ==='Backspace') {
+        clearValues();
+    }
+});
 
 function convertWeightValues() {
     let inputValues = document.getElementById("inputWeight").value;
@@ -60,6 +71,12 @@ function convertWeightValues() {
         outputValues.value = weightInLbs.toFixed(0) + " kg";
     }
 }
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        convertWeightValues();
+    }
+});
 
 function toggleWeightLabel() {
     let unitSwitch = document.getElementById("weightSwitch");
@@ -79,6 +96,30 @@ function clearWeightValues() {
     document.getElementById("inputWeight").value = "";
     document.getElementById("outputWeight").value = "";
 }
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Delete' || event.key ==='Backspace') {
+        clearWeightValues();
+    }
+});
+
+var inputValues = document.getElementById("inputValues");
+var inputWeight = document.getElementById("inputWeight");
+
+inputValues.addEventListener("keydown", function(event) {
+  if (event.key === "Tab") {
+    event.preventDefault();
+    inputWeight.focus();
+  }
+});
+
+inputWeight.addEventListener("keydown", function(event) {
+  if (event.key === "Tab") {
+    event.preventDefault();
+    inputValues.focus();
+  }
+});
+
 
 function initializePage() {
     toggleUnitLabel();
