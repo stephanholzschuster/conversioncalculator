@@ -1,20 +1,21 @@
 function convertLengthValues() {
     let inputValues = document.getElementById("inputValues").value;
     let valuesArray = inputValues.split("x");
-
+    
     let length = parseFloat(valuesArray[0].trim());
     let width = parseFloat(valuesArray[1].trim());
     let height = parseFloat(valuesArray[2].trim());
 
     let unitSwitch = document.getElementById("unitSwitch");
     let outputValues = document.getElementById("outputValues");
+    
 
     if (unitSwitch.checked) {
         let lengthInInch = Math.ceil(length / 2.54);
         let widthInInch = Math.ceil(width / 2.54);
         let heightInInch = Math.ceil(height / 2.54);
 
-        outputValues.value = lengthInInch.toFixed(0) + " x " + widthInInch.toFixed(0) + " x " + heightInInch.toFixed(0) + " inch";
+        outputValues.value = lengthInInch.toFixed(0) + " x " + widthInInch.toFixed(0) + " x " + heightInInch.toFixed(0) + " inches";
     } else {
         let lengthInCm = Math.ceil(length * 2.54);
         let widthInCm = Math.ceil(width * 2.54);
@@ -34,7 +35,7 @@ function toggleUnitLabel() {
         inputValuesLabel.innerHTML = "Enter Values (L x B x H) in cm:";
     } else {
         unitLabel.innerHTML = "inch → cm";
-        inputValuesLabel.innerHTML = "Enter Values (L x B x H) in inch:";
+        inputValuesLabel.innerHTML = "Enter Values (L x B x H) in inches:";
     }
 }
 
