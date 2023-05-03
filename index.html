@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conversion Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/gif" href="images/favicon.ico">
+    <script src="index.js"></script>
+</head>
+
+
+<body onload="initializePage()">        
+
+    <div class="container mt-5">
+        <h1 class="mb-3">Conversion Calculator</h1>
+        <h2 class="mb-2">Längenmaße umrechnen</h2>
+
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="unitSwitch" onchange="toggleUnitLabel()" checked>
+                <label class="custom-control-label" for="unitSwitch" id="unitLabel"></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputValues">Enter Values (L x B x H) in cm:</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="inputValues" placeholder="e.g. 10 x 5 x 3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="unitText"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="outputValues">Output Values:</label>
+            <input type="text" class="form-control" id="outputValues" readonly>
+        </div>
+
+        <div class="d-inline-flex">
+            <button type="button" class="btn btn-primary mr-2" onclick="convertLengthValues()">Convert</button>
+            <button type="button" class="btn btn-danger" onclick="clearValues()">Delete</button>
+        </div>
+    </div>
+        <hr>
+    <div class="container mt-5">
+        <h2 class="mb-2">Gewichte umrechnen</h2>
+
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="weightSwitch" onchange="toggleWeightLabel()" checked>
+                <label class="custom-control-label" for="weightSwitch" id="weightLabel"></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputWeight">Enter Weight:</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="inputWeight" placeholder="e.g. 50">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="weightUnitText"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="outputWeight">Output Value:</label>
+            <input type="text" class="form-control" id="outputWeight" readonly>
+        </div>
+
+        <div class="d-inline-flex">
+            <button type="button" class="btn btn-primary mr-2" onclick="convertWeightValues()">Convert</button>
+            <button type="button" class="btn btn-danger" onclick="clearWeightValues()">Delete</button>
+        </div>
+
+    </div>
+</body>
+</html>
+
