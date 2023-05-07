@@ -1,3 +1,4 @@
+// Dimension Conversion
 function convertLengthValues() {
     let inputValues = document.getElementById("inputValues").value;
     let valuesArray = inputValues.split("x");
@@ -64,6 +65,7 @@ document.addEventListener('keyup', function(event) {
     }
 });
 
+// Mass Conversion
 function convertWeightValues() {
     let inputValues = document.getElementById("inputWeight").value;
     let weight = inputValues;
