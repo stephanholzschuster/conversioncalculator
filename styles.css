@@ -32,8 +32,8 @@ h1 {
   }
   
   footer a:hover{
-    text-decoration: underline;
-    color: black;
+    text-decoration: solid;
+    color: blue;
   }
 
 

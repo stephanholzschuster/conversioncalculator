@@ -11,7 +11,7 @@ function convertLengthValues() {
 
     // Check, if input format is correct
     if (valuesArray.length !== 3 || isNaN(parseFloat(valuesArray[0])) || isNaN(parseFloat(valuesArray[1])) || isNaN(parseFloat(valuesArray[2]))){
-        alert("Please enter following format: L x B x H - e.g. 10 x 20 x 30", 'danger');
+        alert("Please enter following format: L x B x H - e.g. 10 x 20 x 30 cm", 'danger');
         document.getElementById("outputValues").value = "";
         return;
     } 
