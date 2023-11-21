@@ -80,21 +80,41 @@ function toggleUnitLabel() {
 }
 
 // Mass Conversion
-function convertWeightValues() {
-    let inputValues = document.getElementById("inputWeight").value;
-    let weight = inputValues;
+// convert Weight Value One
+function convertWeightValueOne() {
+    let inputValueOne = document.getElementById("inputWeightOne").value;
+    let weightOne = inputValueOne;
 
     let unitSwitch = document.getElementById("weightSwitch");
-    let outputValues = document.getElementById("outputWeight");
+    let outputValueOne = document.getElementById("outputWeightOne");
 
     let weightConstant = 2.20462;
 
     if (unitSwitch.checked) {
-        let weightInKg = Math.ceil(weight * weightConstant);
-        outputValues.value = weightInKg.toFixed(0) + " lbs";
+        let weightInKg = Math.ceil(weightOne * weightConstant);
+        outputValueOne.value = weightInKg.toFixed(0) + " lbs";
     } else {
-        let weightInLbs = Math.ceil(weight / weightConstant);
-        outputValues.value = weightInLbs.toFixed(0) + " kg";
+        let weightInLbs = Math.ceil(weightOne / weightConstant);
+        outputValueOne.value = weightInLbs.toFixed(0) + " kg";
+    }
+}
+
+// convert Weight Value Two
+function convertWeightValueTwo() {
+    let inputValueTwo = document.getElementById("inputWeightTwo").value;
+    let weightTwo = inputValueTwo;
+
+    let unitSwitch = document.getElementById("weightSwitch");
+    let outputValueTwo = document.getElementById("outputWeightTwo");
+
+    let weightConstant = 2.20462;
+
+    if (unitSwitch.checked) {
+        let weightInKg = Math.ceil(weightTwo * weightConstant);
+        outputValueTwo.value = weightInKg.toFixed(0) + " lbs";
+    } else {
+        let weightInLbs = Math.ceil(weightTwo / weightConstant);
+        outputValueTwo.value = weightInLbs.toFixed(0) + " kg";
     }
 }
 
@@ -102,14 +122,18 @@ function convertWeightValues() {
 // // EventListener to convert by pressing Enter
 document.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
-        convertWeightValues();
+        convertWeightValueOne();
+        convertWeightValueTwo();
     }
 });
 
 // // EventListener to delete values by pressing Delete
 function clearWeightValues() {
-    document.getElementById("inputWeight").value = "";
-    document.getElementById("outputWeight").value = "";
+    document.getElementById("inputWeightOne").value = "";
+    document.getElementById("inputWeightTwo").value = "";
+    document.getElementById("outputWeightOne").value = "";
+    document.getElementById("outputWeightTwo").value = "";
+
 }
 
 document.addEventListener('keyup', function(event) {
@@ -122,30 +146,60 @@ document.addEventListener('keyup', function(event) {
 function toggleWeightLabel() {
     let unitSwitch = document.getElementById("weightSwitch");
     let unitLabel = document.getElementById("weightLabel");
-    let inputValuesLabel = document.querySelector('label[for="inputWeight"]');
+    let inputValueLableOne = document.querySelector('label[for="inputWeightOne"]');
+    let inputValueLableTwo = document.querySelector('label[for="inputWeightTwo"]');
 
     if (unitSwitch.checked) {
         unitLabel.innerHTML = "kg → lbs";
-        inputValuesLabel.innerHTML = "Enter value in kg:";
+        inputValueLableOne.innerHTML = "Enter value in kg:";
+        inputValueLableTwo.innerHTML = "Enter value in kg:";
     } else {
         unitLabel.innerHTML = "lbs → kg";
-        inputValuesLabel.innerHTML = "Enter value in lbs:";
+        inputValueLableOne.innerHTML = "Enter value in lbs:";
+        inputValueLableTwo.innerHTML = "Enter value in lbs:";
     }
 }
-// Jump between dimension input field and mass input field
-var inputValues = document.getElementById("inputValues");
-var inputWeight = document.getElementById("inputWeight");
+
+// Jump between dimension input fields and mass input fields
+let inputValues = document.getElementById("inputValues");
+let inputWeightOne = document.getElementById("inputWeightOne");
+let inputWeightTwo = document.getElementById("inputWeightTwo");
 
 inputValues.addEventListener("keydown", function(event) {
   if (event.key === "Tab") {
     event.preventDefault();
-    inputWeight.focus();
+    if (event.shiftKey) {
+      // Wenn Shift-Taste gedrückt ist, zum vorherigen Element (inputWeightTwo) wechseln
+      inputWeightTwo.focus();
+    } else {
+      // Andernfalls zum nächsten Element (inputWeightOne) wechseln
+      inputWeightOne.focus();
+    }
   }
 });
 
-inputWeight.addEventListener("keydown", function(event) {
+inputWeightOne.addEventListener("keydown", function(event) {
   if (event.key === "Tab") {
     event.preventDefault();
-    inputValues.focus();
+    if (event.shiftKey) {
+      // Wenn Shift-Taste gedrückt ist, zum vorherigen Element (inputValues) wechseln
+      inputValues.focus();
+    } else {
+      // Andernfalls zum nächsten Element (inputWeightTwo) wechseln
+      inputWeightTwo.focus();
+    }
+  }
+});
+
+inputWeightTwo.addEventListener("keydown", function(event) {
+  if (event.key === "Tab") {
+    event.preventDefault();
+    if (event.shiftKey) {
+      // Wenn Shift-Taste gedrückt ist, zum vorherigen Element (inputWeightOne) wechseln
+      inputWeightOne.focus();
+    } else {
+      // Andernfalls zum nächsten Element (inputValues) wechseln
+      inputValues.focus();
+    }
   }
 });

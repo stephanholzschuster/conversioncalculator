@@ -54,20 +54,53 @@
             </div>
         </div>
 
+<div class="row">
+    <!-- Erste Eingabe -->
+    <div class="col-md-6">
         <div class="form-group">
-            <label for="inputWeight">Enter Weight:</label>
+            <label for="inputWeightOne">Enter Gross Weight:</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="inputWeight" tabindex="2" placeholder="e.g. 50">
+                <input type="text" class="form-control" id="inputWeightOne" tabindex="2" placeholder="e.g. 50">
                 <div class="input-group-append">
-                    <span class="input-group-text" id="weightUnitText"></span>
+                    <span class="input-group-text" id="weightUnitTextOne"></span>
                 </div>
             </div>
         </div>
+    </div>
 
+     <!-- Zweite Eingabe -->
+     <div class="col-md-6">
         <div class="form-group">
-            <label for="outputWeight">Output Value:</label>
-            <input type="text" class="form-control" id="outputWeight" readonly>
+            <label for="inputWeightTwo">Enter Net Weight:</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="inputWeightTwo" tabindex="3" placeholder="e.g. 50">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="weightUnitTextTwo"></span>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <!-- Erste Ausgabe -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="outputWeightOne">Output Value 1:</label>
+            <input type="text" class="form-control" id="outputWeightOne" readonly>
+        </div>
+    </div>
+
+     <!-- Zweite Ausgabe -->
+     <div class="col-md-6">
+        <div class="form-group">
+            <label for="outputWeightTwo">Output Value 2:</label>
+            <input type="text" class="form-control" id="outputWeightTwo" readonly>
+        </div>
+    </div>
+</div>
 
         <div class="d-inline-flex">
             <button type="button" class="btn btn-primary mr-2" onclick="convertWeightValues()">Convert</button>
