@@ -16,10 +16,10 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
   }
-  
+
   h2 {
-    font-size: 1.2rem;
-    text-decoration: underline;
+    font-size: 1.rem;
+    text-decoration: none;
   }
 
   #copyright-text {
