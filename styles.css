@@ -27,7 +27,7 @@ h1 {
   }
 
   footer a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
   }
   
@@ -35,5 +35,14 @@ h1 {
     text-decoration: solid;
     color: blue;
   }
+
+  .icons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer-icons {
+  padding-left: 15px;
+}
 
 
