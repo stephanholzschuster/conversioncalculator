@@ -8,19 +8,16 @@ body {
     color: white;
     margin-top: 30px;
     margin-bottom: 10px;
-    font-size: 1rem;
   }
-
 
 h1 {
     font-size: 2rem;
     font-weight: bold;
   }
 
-  h2 {
-    font-size: 1.rem;
-    text-decoration: none;
-  }
+.mb-2 {
+  font-size: 1.5rem
+}
 
   #copyright-text {
     text-align: center;
@@ -45,4 +42,7 @@ h1 {
   padding-left: 15px;
 }
 
+.custom-control.custom-switch {
+  padding-left: 36px;
+}
 
